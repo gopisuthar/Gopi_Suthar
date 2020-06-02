@@ -24,7 +24,12 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
+  <script language="JavaScript">
+    function showInput() {
+        document.getElementById('display').innerHTML = 
+                    document.getElementById("user_input").value;
+    }
+  </script>
  
 </head>
 
@@ -420,12 +425,14 @@
 
           </div>
 
-         <form action="/action_page.php" method="get">
-  <label for="email">Enter your email:</label>
-  <input type="email" id="email" name="email"><br><br>
-  <button type="submit">Submit</button>
-  <button type="submit" formnovalidate>Submit without validation</button>
-</form>
+         <form>
+    <label><b>Enter a Message</b></label>
+    <input type="text" name="message" id="user_input">
+  </form>
+
+  <input type="submit" onclick="showInput();"><br/>
+  <label>Your input: </label>
+  <p><span id='display'></span></p>
 
         </div>
     </section><!-- End Contact Section -->
